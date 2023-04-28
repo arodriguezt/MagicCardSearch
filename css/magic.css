@@ -1,0 +1,705 @@
+@font-face {
+    font-family: "GentiumBook";
+    src: url("../fonts/gentium-book-basic.regular.ttf");
+}
+@font-face {
+    font-family: "GentiumBook";
+    src: url("../fonts/gentium-book-basic.bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "GentiumBook";
+    src: url("../fonts/gentium-book-basic.italic.ttf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "GentiumBook";
+    src: url("../fonts/gentium-book-basic.bold-italic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body,html {
+  line-height: 1;
+  font-family: "GentiumBook";
+  height:100vh;
+  width:100vw;
+
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* End of reset */
+body * > {
+  box-sizing: border-box;
+}
+
+body {
+    display:grid;
+    grid-template-rows:1fr 7fr;
+}
+
+header{
+    padding-top:8px;
+    font-size: 3.5em;
+    font-weight: 600;
+    text-align: center;
+    background-image: url("http://cdn.shopify.com/s/files/1/0154/8104/5040/collections/MTGBannerv1_1200x1200.png?v=1651839489");
+    background-repeat:no-repeat;
+    background-size:cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    width:200px;
+    padding-left:10px;
+}
+
+label img{
+    width:20px;
+}
+#tapet{
+    background-image: url("https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71Jg5kS0AiL.jpg");
+    background-size: cover;
+    display:block;
+    padding-top:30px;
+    overflow:auto;
+}
+
+#cercador{
+    padding:10px;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+#cartes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    justify-content: center;
+}
+
+.carta {
+    cursor: pointer;
+    border: 1px solid black;
+    width: 250px;
+    height: 350px;
+    margin-top: 28px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: -1px 2px 6px 1px black;
+    background: #171314;
+    padding:3px;
+/*    transform: rotate(6deg);*/
+    z-index:0;
+}
+
+.carta:hover {
+    overflow: visible;
+    z-index:1;
+    transform:rotate(0deg);
+    transform: translate(-10px,-10px);
+    box-shadow: 8px 8px 15px 5px black;
+}
+ .fons-carta {
+    height: 300px;
+    margin: 10px 10px 0 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 4%;
+    border-bottom-right-radius: 4%;
+    display: flex;
+    background-color: #bbb;
+}
+
+.descripcio br{
+	display:block;
+	margin-top:0.3em;
+	content: " ";
+}
+
+.opcions{
+    position:absolute;
+    left:-25px;
+    top:-25px;
+    display:flex;
+    flex-direction:column;
+    z-index: 200;
+
+}
+
+.opcions span{
+    height:25px;
+    width:25px;
+    background-color:white;
+    border-radius:150px;
+    display:inline-flex;
+    align-items:center;
+    justify-content: center;
+    border:solid 2px black;
+}
+
+#cercar{
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+    height: 30px;
+    cursor: pointer;
+}
+
+.opcions span:hover{
+    border:3px dashed red;
+    background-color:#F5B7B1;
+}
+
+.carta-jugada{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    width:150px;
+    height:153px;
+    padding:3px;
+    border-radius:10px 10px 0 0;
+    box-shadow: -5px 5px 20px 5px black;
+    margin:10px;
+}
+
+.carta-jugada img{
+    width: 150px;
+}
+
+.carta-jugada p{
+    position:absolute;
+    left:56px;
+    bottom:-12px;
+    background-color:white;
+    padding:2px 5px;
+    border-radius:5px;
+    font-weight: bold;
+    border:solid 3px black;
+    box-shadow: inset 0 0 3px #000000;
+}
+
+.carta-jugada:hover {
+    overflow: visible;
+    z-index:1;
+    transform:translate(5%,-5%);
+    box-shadow: -10px 10px 20px 5px black;
+}
+
+.carta-jugada > span{
+    padding-top:3px;
+    font-weight: 900;
+    text-align: center;
+    width:144px;
+    display: inline-flex;
+    align-items: center;
+    text-shadow: 1px 1px 2px white;
+    height:38px;
+    border-radius:5px;
+    border:solid 3px black;
+    margin-bottom:2px;
+    background-color: white;
+}
+
+/*
+    -------------------------
+    -------------------------
+            BORDERS
+    -------------------------
+    -------------------------
+*/
+.contingut-carta,
+.tipus-carta {
+    border-bottom: 2px solid #a9a9a9;
+    border-left: 1px solid #a9a9a9;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-radius:4px;
+}
+
+
+/*
+    ----------------------
+    ----------------------
+            OVERFLOW
+    ----------------------
+    ----------------------
+*/
+.contingut-carta,
+.tipus-carta,
+.text-carta {
+    overflow: hidden;
+}
+
+
+/*
+  ----------------------------------------
+  ----------------------------------------
+            CARD FRAME
+  ----------------------------------------
+  ----------------------------------------
+*/
+.card-frame {
+    position: relative;
+    height: 108%;
+    max-width: 97%;
+    left: 1.7%;
+    top: 0.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.contingut-carta,
+.tipus-carta {
+    background: 
+        linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ), 
+        url(https://image.ibb.co/jKByZn/tile_bg_1.jpg);     
+    display: flex;
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 9px/20px;
+}
+
+.nom,
+.type {
+    font-size: 0.8em;
+    margin-left: 5px;
+    align-self: baseline;
+    font-weight: 900;
+    margin-top:2px;
+}
+
+.type{
+	font-size:0.65em;
+}
+
+.mana{
+	margin-right:1px;
+}
+
+.mana-icon {
+    font-size: 0.7em;
+    background: #ADD3AC;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin-right: 1px;
+    height: 7px;
+    align-self: center;
+}
+
+.contingut-carta .mana-icon {
+    box-shadow: -0.05em 0.12em 0px 0 black;
+    height: 10px;
+}
+.imatge-carta {
+    height: 50%;
+    margin: 0 5px; 
+}
+
+.tipus-carta {
+    margin-top: 0;
+} 
+
+.text-carta {
+    margin: 0 5px;
+    background: #d3ded6;
+    background-image: url(https://image.ibb.co/dFcNx7/tile_bg_2.jpg);
+    display: flex;
+    height:50px;
+    flex-direction: column;
+    justify-content: space-around;    
+    padding: 25px 3px;
+    font-size: 0.65em;
+}
+
+.text-farciment {
+    font-style: italic;
+    padding: 5px 0;
+}
+
+p {
+    margin-bottom: 2px;
+}
+
+.marge-intern {
+    margin: 3px 1px;
+}
+
+
+.informacio-inferior {
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    margin: 2px 3px 0 7px;
+}
+
+
+.batalla {
+    font-size: 12px;
+    position: relative;
+    top: -7px;
+    border-radius:4px;
+    padding:1px 0;
+}
+
+.marge-dintre {
+    margin: 0 5px;
+}
+
+.batalla {
+    flex: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 20%;
+    text-align: right;
+    background: lightgray;
+    color:black;
+    font-weight: bolder;
+    text-align:center;
+}
+ .informacio-inferior img {
+    overflow: hidden;
+    max-width: 5px;
+}
+
+/*Cartes de color verd*/
+[color="green"] .fons-carta{
+	background-image: url(https://image.ibb.co/e1XKAS/green_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+[color="green"] .contingut-carta {
+    box-shadow: 
+        0 0 0 2px #171314,
+        0 0 0 5px #26714A,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="green"] .imatge-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #26714A,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="green"] .tipus-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #26714A,
+        -1px 1px 1px 2px #171314;
+    margin-bottom: 3px;
+}
+
+[color="green"] .text-carta {
+    box-shadow: 
+    	0 0 0 1px #171314,
+        0 0 0 2px #26714A,
+        -1px 1px 1px 2px #171314;
+}
+
+[color="green"] .batalla{
+	box-shadow: 
+    	0 0 0 1px #171314,
+        0 0 0 2px #26714A,
+        -1px 1px 1px 2px #171314;
+}
+/*Cartes de color vermell*/
+[color="red"] .fons-carta{
+	background-image: url(https://previews.123rf.com/images/shottythefirst/shottythefirst1502/shottythefirst150200028/36902347-abstract-background-image-with-interesting-texture-lava-crater-grunge-textures-and-backgrounds-liqui.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+[color="red"] .contingut-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #B11313,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="red"] .imatge-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #B11313,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="red"] .tipus-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #B11313,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+
+[color="red"] .text-carta {
+    box-shadow: 
+    	0 0 0 1px #171314,
+        0 0 0 2px #B11313,
+        -1px 1px 1px 2px #171314;
+}
+
+[color="red"] .batalla{
+	box-shadow: 
+    	0 0 0 1px #171314,
+        0 0 0 2px #B11313,
+        -1px 1px 1px 2px #171314;
+}
+
+/*Cartes de color negre*/
+[color="black"] .fons-carta{
+	background-image: url(https://pic.stonecontact.com/picture/natural-stone/black-gold-granite-tile-15314-1B.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+[color="black"] .contingut-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #1F1F1F,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="black"] .imatge-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #1F1F1F,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="black"] .tipus-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #1F1F1F,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+
+[color="black"] .text-carta {
+    box-shadow: 
+    	0 0 0 1px #171314,
+        0 0 0 2px #1F1F1F,
+        -1px 1px 1px 2px #171314;
+}
+[color="black"] .batalla{
+	box-shadow: 
+    	0 0 0 1px #171314,
+        0 0 0 2px #1F1F1F,
+        -1px 1px 1px 2px #171314;
+}
+
+/*Cartes de color blanc*/
+[color="white"] .fons-carta{
+	background-image: url(https://i.pinimg.com/originals/fc/90/26/fc9026b1364d5c479d448b9fd741a47c.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+[color="white"] .contingut-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #E0E3A0,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="white"] .imatge-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #E0E3A0,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="white"] .tipus-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #E0E3A0,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+
+[color="white"] .text-carta {
+    box-shadow:
+    	0 0 0 1px #171314,
+        0 0 0 2px #E0E3A0,
+        -1px 1px 1px 2px #171314;
+}
+[color="white"] .batalla{
+	box-shadow: 
+    	0 0 0 1px #171314,
+        0 0 0 2px #E0E3A0,
+        -1px 1px 1px 2px #171314;
+}
+
+/*Cartes de color blau*/
+[color="blue"] .fons-carta{
+	background-image: url(https://i.pinimg.com/originals/fc/fa/9b/fcfa9b380516309c424f78d486d0bc47.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+[color="blue"] .contingut-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #2840BC,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="blue"] .imatge-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #2840BC,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+[color="blue"] .tipus-carta {
+    box-shadow: 
+        0 0 0 1px #171314,
+        0 0 0 2px #2840BC,
+        -1px 1px 1px 2px #171314;
+
+    margin-bottom: 3px;
+}
+
+[color="blue"] .text-carta {
+    box-shadow:
+    	0 0 0 1px #171314,
+        0 0 0 2px #2840BC,
+        -1px 1px 1px 2px #171314;
+}
+[color="blue"] .batalla{
+	box-shadow: 
+    	0 0 0 1px #171314,
+        0 0 0 2px #2840BC,
+        -1px 1px 1px 2px #171314;
+}
+
+/* Formulari de creació de nova carta */
+.boto-carta {
+  background-color: #555;
+  border-radius: 20px;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  font-size: 20px;
+  bottom: 23px;
+  right: 28px;
+  width: 200px;
+  z-index:10;
+}
+
+
+.form-container {
+  padding: 10px;
+  background-color: rgba(255,255,255,0.4);
+  font-size:20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#elements{
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    height: 40px;
+}
+
+.form-container select, input[type=text], .form-container input[type=password] {
+  width: 250px;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  border: dashed 4px orange;
+  font-size: 15px;
+}
+
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container h1{
+    font-size:30px;
+    margin-bottom: 10px;
+    margin-top:5px;
+    background:orange;
+}
+
+.form-container img{
+    max-width:150px;
+}
+
+#atac, #defensa{
+    width:40px;
+}
+
+label{
+    font-weight: bolder;
+    text-shadow: 1px 1px white;
+}
+
+#atac{
+    margin-right:8px;
+}
+

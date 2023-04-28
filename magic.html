@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Magic: The Gathering</title>
+
+    <!-- Font Awesonme -->
+    <script
+      src="https://kit.fontawesome.com/b614cfd257.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="css/magic.css"/>
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript" src="js/magic.js"></script>
+  </head>
+  <body>
+    <header>
+      <p>Cercador</p>
+      <img
+        src="https://1000logos.net/wp-content/uploads/2022/10/Magic-The-Gathering-logo.png"
+      />
+      <div id="cercador">
+        <div class="form-container">
+          <input
+            type="text"
+            placeholder="Nom de la carta..."
+            name="nom"
+            required
+            id="nom"
+          />
+          <div id="elements">
+            <label for="foc"
+              ><img
+                src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/R.svg"
+            /></label>
+            <input type="checkbox" value="r" id="foc" />
+
+            <label for="sol"
+              ><img
+                src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/W.svg"
+            /></label>
+            <input type="checkbox" value="w" id="sol" />
+
+            <label for="aigua"
+              ><img
+                src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/U.svg"
+            /></label>
+            <input type="checkbox" value="u" id="aigua" />
+
+            <label for="calavera"
+              ><img
+                src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/B.svg"
+            /></label>
+            <input type="checkbox" value="b" id="calavera" />
+
+            <label for="bosc"
+              ><img
+                src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/G.svg"
+            /></label>
+            <input type="checkbox" value="g" id="bosc" />
+          </div>
+
+          <button id="cercar">
+            <i class="fa-solid fa-magnifying-glass-plus fa-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div id="tapet">
+      <div id="cartes">
+        <!-- Inici Carta 1 -->
+        <div class="carta" color="blue">
+          <div class="fons-carta">
+            <div class="card-frame">
+              <div class="opcions">
+                <span class="fas fa-recycle"></span>
+              </div>
+
+              <div class="contingut-carta">
+                <h1 class="nom">Surtland Elementalist</h1>
+                <div class="mana">
+                  <img
+                    src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/5.svg"
+                    class="mana-icon"
+                  /><img
+                    src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/U.svg"
+                    class="mana-icon"
+                  /><img
+                    src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/U.svg"
+                    class="mana-icon"
+                  />
+                </div>
+              </div>
+
+              <img
+                class="imatge-carta"
+                src="https://cards.scryfall.io/art_crop/front/1/c/1c9e7fdc-676f-4901-83ff-bfea3a96d937.jpg?1631056992"
+                alt="nissa art"
+              />
+
+              <div class="tipus-carta">
+                <h1 class="type">Creature — Giant Wizard</h1>
+              </div>
+
+              <div class="text-carta">
+                <p class="descripcio marge-intern">
+                  As an additional cost to cast this spell, reveal a Giant card
+                  from your hand or pay
+                  <img
+                    src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/2.svg"
+                    class="mana-icon"
+                  />.<br />Whenever Surtland Elementalist attacks, you may cast
+                  an instant or sorcery spell from your hand without paying its
+                  mana cost.
+                </p>
+              </div>
+
+              <div class="informacio-inferior marge-dintre">
+                <div class="batalla">
+                  <span class="power">8</span>/<span class="toughness">8</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fi carta 1 -->
+
+        <!-- Inici carta 2 -->
+        <div class="carta" color="white">
+          <div class="fons-carta">
+            <div class="card-frame">
+              <div class="opcions">
+                <span class="fas fa-recycle"></span>
+              </div>
+
+              <div class="contingut-carta">
+                <h1 class="nom">Armor of Faith</h1>
+                <div class="mana">
+                  <img
+                    src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/W.svg"
+                    class="mana-icon"
+                  />
+                </div>
+              </div>
+
+              <img
+                class="imatge-carta"
+                src="https://cards.scryfall.io/art_crop/front/f/c/fccbbc47-99c6-4ba9-95c2-992d5d2a67b2.jpg?1562942650"
+                alt="nissa art"
+              />
+
+              <div class="tipus-carta">
+                <h1 class="type">Enchantment — Aura</h1>
+              </div>
+
+              <div class="text-carta">
+                <p class="descripcio marge-intern">
+                  Enchant creature<br />Enchanted creature gets +1/+1.<br /><img
+                    src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/W.svg"
+                    class="mana-icon"
+                  />: Enchanted creature gets +0/+1 until end of turn.
+                </p>
+                <p class="text-farciment">
+                  "Keep your chainmail, warrior. I have my own form of
+                  protection." —Halvor Arenson, Kjeldoran Priest
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fi carta 2 -->
+        <div class="carta" color="white"><div class="fons-carta"><div class="card-frame"><div class="contingut-carta"><h1 class="nom">Distinguished Conjurer</h1><div class="mana"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/1.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/W.svg" class="mana-icon"></div></div><img class="imatge-carta" src="https://cards.scryfall.io/art_crop/front/d/0/d0eaeec2-d1d4-4494-9c5d-cebfd7f088de.jpg?1675644345"><div class="tipus-carta"><h1 class="type">Creature — Human Wizard</h1></div><div class="text-carta"><p class="descripcio marge-intern">Whenever another creature enters the battlefield under your control, you gain 1 life.<br><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/4.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/W.svg" class="mana-icon">, <img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/T.svg" class="mana-icon">: Exile another target creature you control, then return it to the battlefield under its owner's control.</p></div><div class="informacio-inferior marge-dintre"><div class="batalla"><span class="power">1</span>/<span class="toughness">2</span></div></div></div></div></div>       
+      </div>
+    </div>
+  </body>
+</html>
